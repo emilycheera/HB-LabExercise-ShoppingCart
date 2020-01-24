@@ -168,7 +168,13 @@ def process_login():
         flash("No customer with that email found.")
         return redirect("/login")
 
-    
+@app.route("/logout")
+def process_logout():
+
+    del session["logged_in_customer_email"]
+
+    flash("Logged out")
+    return redirect("/melons")
 
 
 @app.route("/checkout")
