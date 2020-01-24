@@ -42,7 +42,7 @@ def get_by_email(customer_email):
 
     # This relies on access to the global dictionary `customers_by_email`
 
-    return customers_by_email[customer_email]
+    return customers_by_email.get(customer_email)
 
 
 customers_by_email = read_customers_from_file("customers.txt")
