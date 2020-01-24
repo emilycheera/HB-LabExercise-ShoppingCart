@@ -170,6 +170,7 @@ def process_login():
 
 @app.route("/logout")
 def process_logout():
+    """Log user out of site."""
 
     del session["logged_in_customer_email"]
 
