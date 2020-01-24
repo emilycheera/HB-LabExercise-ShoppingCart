@@ -76,7 +76,10 @@ def show_shopping_cart():
     # Make sure your function can also handle the case wherein no cart has
     # been added to the session
 
-    cart_dictionary = session["cart"]
+    if "cart" not in session:
+        session["cart"] = {}
+
+    cart_dictionary = session.get("cart")
     total_cost = 0
     melons_in_cart = []
 
