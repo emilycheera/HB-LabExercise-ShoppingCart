@@ -114,11 +114,7 @@ def add_to_cart(melon_id):
     if "cart" not in session:
         session["cart"] = {}
 
-    if melon_id in session["cart"]:
-        session["cart"][melon_id] += 1
-
-    else:
-        session["cart"][melon_id] = 1
+    session["cart"][melon_id] = session["cart"].get(melon_id, 0) + 1
 
     flash("The melon was added to your cart.")
     return redirect("/cart")
